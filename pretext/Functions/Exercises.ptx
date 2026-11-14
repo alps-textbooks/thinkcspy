@@ -192,7 +192,9 @@ drawSpiral(guido, 89)
       <code>
 
 def sumTo(n):
-    # your code here ====
+    # your code here
+
+====
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
@@ -234,7 +236,9 @@ print("The sum from 1 to 5 is",t)
       <code>
 
 def areaOfCircle(r):
-    # your code here ====
+    # your code here
+
+====
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
@@ -337,7 +341,9 @@ drawStar(stroustrup, 7)
       <code>
 
 def sumTo(n):
-    # your code here ====
+    # your code here
+
+====
 from unittest.gui import TestCaseGui
 class myTests(TestCaseGui):
 
@@ -381,7 +387,9 @@ print("The sum from 1 to 5 is",t)
       <code>
 
 def mySqrt(n):
-    # your code here ====
+    # your code here
+
+====
 from unittest.gui import TestCaseGui
 
 class myTests(TestCaseGui):
