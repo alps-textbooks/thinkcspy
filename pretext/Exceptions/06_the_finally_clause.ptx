@@ -37,14 +37,15 @@ def show_poly():
 show_poly()
         </code>
   </program>
-  <p>In lines 20&#x2013;22, <c>show_poly</c> is called three times. Each one creates a new
+  <p>In line 23, <c>show_poly</c> is called. It creates a
             window for its turtle, and draws a polygon with the number of sides input by
             the user. But what if the user enters a string that cannot be converted to
             an <c>int</c>? What if they close the dialog? We'll get an exception, <em>but even though
-                we've had an exception, we still want to close the turtle's window</em>. Lines 17&#x2013;18
-            does this for us. Whether we complete the statements in the <c>try</c> clause successfully
+                we've had an exception, we still want to close the turtle's window</em>. Lines 20&#x2013;21
+            do this for us. Whether we complete the statements in the <c>try</c> clause successfully
             or not, the <c>finally</c> block will always be executed.</p>
-  <p>Notice that the exception is still unhandled &#x2014; only an <c>except</c> clause can
-            handle an exception, so our program will still crash. But at least its turtle
-            window will be closed before it crashes!</p>
+  <p>Here the <c>except</c> clause on lines 17&#x2013;19 handles the exception by printing a
+            message. Without it the exception would be unhandled &#x2014; only an <c>except</c> clause can
+            handle an exception &#x2014; and the program would crash. But even then its turtle
+            window would be closed before it crashed!</p>
 </section>
