@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <section xml:id="exceptions_runetime-stack-and-raise-command">
-  <title>Runetime Stack and <c>raise</c> command</title>
+  <title>Runtime Stack and <c>raise</c> command</title>
   <p>There are cases where the sequential flow-of-control does
             not work well. An example will best explain this.</p>
   <p>Let's suppose that a program contains complex logic that is appropriately
@@ -38,7 +38,7 @@ def D()
             <em>exception</em> does. An <em>exception</em> is a message to any function currently on the
             executing program's <q>run-time-stack</q>. (The <q>run-time-stack</q> is what keeps track
             of the active function calls while a program is executing.)</p>
-  <p>In Python, your create an <em>exception</em> message using the <c>raise</c> command. The
+  <p>In Python, you create an <em>exception</em> message using the <c>raise</c> command. The
             simplest format for a <c>raise</c> command is the keyword <c>raise</c> followed by
             the name of an exception. For example:</p>
   <program language="Python">

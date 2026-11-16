@@ -1,13 +1,19 @@
 <?xml version="1.0"?>
 <exercises xml:id="lists_exercises">
   <title>Exercises</title>
-  <exercise>
-    <statement/>
-    <program interactive="" language=""/>
+  <exercise label="lists_ex_1">
+    <statement>
+      <p>Draw a reference diagram for <c>a</c> and <c>b</c> before and after the third line of
+                        the following python code is executed:</p>
+      <program language="python">
+        <code>
+a = [1, 2, 3]
+b = a[:]
+b[0] = 5
+        </code>
+      </program>
+    </statement>
     <solution>
-                    Your diagram should show two variables referring to two different lists.  a refers to the original list with 1,2, and 3.
-                        b refers to a list with 5,2, and 3 since the zero-eth element was replaced with 5.
-
                     <p>Your diagram should show two variables referring to two different lists.  <c>a</c> refers to the original list with 1,2, and 3.
                         <c>b</c> refers to a list with 5,2, and 3 since the zero-eth element was replaced with 5.</p>
                 </solution>
