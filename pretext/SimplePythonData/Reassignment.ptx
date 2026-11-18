@@ -37,8 +37,8 @@ print(a, b)
         </subsection>
     <subsection xml:id="simple-python-data_developing-your-mental-model-of-how-python-evaluates">
     <title>Developing your mental model of How Python Evaluates</title>
-    <p>Its important to start to develop a good mental model of the steps Python takes when evaluating an assignment statement.  In an assignment statement Python first evaluates the code on the right hand side of the assignment operator.  It then gives a name to whatever that is.  The (very short) visualization below shows what is happening.</p>
-    <exercise runestone="se_reassign"/>
+    <p>Its important to start to develop a good mental model of the steps Python takes when evaluating an assignment statement.  In an assignment statement Python first evaluates the code on the right hand side of the assignment operator.  It then gives a name to whatever that is.  Here is what happens, one statement at a time:</p>
+    <p><ol marker="1"><li><p><c>a = 5</c></p></li><li><p><c>b = a</c> becomes <c>b = 5</c></p></li></ol></p>
     <p>In the first statement a = 5 the literal number 5 evaluates to 5, and is given the name a.  In the second statement, the variable a evaluates to 5 and so 5 now ends up with a second name b.
     </p>
     <note>

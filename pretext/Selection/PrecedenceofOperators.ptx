@@ -147,6 +147,6 @@
       </choice>
     </choices>
   </exercise>
-  <p>Here is an animation for the above expression:</p>
-  <exercise runestone="se_tq631"/>
+  <p>Here is the above expression evaluated one step at a time:</p>
+  <p><ol marker="1"><li><p><c>5 * 3 &gt; 10 and 4 + 6 == 11</c></p></li><li><p><c>15 &gt; 10 and 4 + 6 == 11</c></p></li><li><p><c>True and 4 + 6 == 11</c></p></li><li><p><c>True and 10 == 11</c></p></li><li><p><c>True and False</c></p></li><li><p><c>False</c></p></li></ol></p>
 </section>
