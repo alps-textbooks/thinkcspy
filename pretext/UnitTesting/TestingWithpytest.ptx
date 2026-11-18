@@ -238,6 +238,12 @@ def grade(score):
         testF = True
         return 'F'
 
+# Your program runs as its own module, main, so test_grade looks grade up
+# there; give main this one.
+import sys
+if 'main' in sys.modules:
+    sys.modules['main'].grade = grade
+
 class myTests(TestCaseGui):
 
     def testOne(self):
