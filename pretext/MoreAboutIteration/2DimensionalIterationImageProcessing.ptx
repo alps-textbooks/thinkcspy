@@ -411,6 +411,7 @@ print(p.getGreen(), p.getBlue())
                 we can use the methods described above to access information about the image or to get a specific pixel and check
                 on its basic color intensities.</p>
 
+  <image source="datafiles/LutherBellPic.jpg" width="66%"/>
   <datafile label="luther-bell" filename="luther.jpg">
     <image source="datafiles/LutherBellPic.jpg" width="66%"/>
   </datafile>
@@ -545,12 +546,22 @@ for row in range(img.getHeight()):
                 and 255.  For example, if the original red component was 50, then the opposite, or negative red value would be
     <c>255-50</c> or 205.  In other words, pixels with a lot of red will have negatives with little red and pixels with little red will have negatives with a lot.  We do the same for the blue and green as well.</p>
   <p>The program below implements this algorithm using the previous image (luther.jpg).  Run it to see the resulting negative image.  Note that there is a lot of processing taking place and this may take a few seconds to complete.  In addition, here are two other images that you can use (cy.png and goldygopher.png).</p>
-  <raw format="html" xml:space="preserve">&lt;img src="../_static/cy.png" id="cy.png"&gt;
-&lt;h4 style="text-align: center;"&gt;cy.png&lt;/h4&gt;</raw>
-  <raw format="html" xml:space="preserve">&lt;img src="../_static/goldygopher.png" id="goldygopher.png"&gt;
-&lt;h4 style="text-align: center;"&gt;goldygopher.png&lt;/h4&gt;</raw>
+  <figure>
+    <caption>cy.png</caption>
+    <image source="MoreAboutIteration/Figures/cy.png" width="40%"/>
+  </figure>
+  <figure>
+    <caption>goldygopher.png</caption>
+    <image source="MoreAboutIteration/Figures/goldygopher.png" width="40%"/>
+  </figure>
+  <datafile label="cy-png" xml:id="cy-png" filename="cy.png">
+    <image source="MoreAboutIteration/Figures/cy.png"/>
+  </datafile>
+  <datafile label="goldygopher-png" xml:id="goldygopher-png" filename="goldygopher.png">
+    <image source="MoreAboutIteration/Figures/goldygopher.png"/>
+  </datafile>
   <p>Change the name of the file in the <c>image.Image()</c> call to see how these images look as negatives.  Also, note that there is an <c>exitonclick</c> method call at the very end which will close the window when you click on it.  This will allow you to <q>clear the screen</q> before drawing the next negative.</p>
-  <program xml:id="acimg_1" interactive="activecode" language="python">
+  <program xml:id="acimg_1" interactive="activecode" language="python" datafile="luther.jpg cy.png goldygopher.png">
     <code>
 import image
 
