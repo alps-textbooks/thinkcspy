@@ -3,7 +3,7 @@
   <title>Exercises</title>
   <exercise label="ex_exceptions_readposint">
     <statement>
-      <p>Write a function named <c>readposint</c> that uses the <c>input</c> dialog to prompt the user for a positive integer and then checks the input to confirm that it meets the requirements. It should be able to handle inputs that cannot be converted to <c>int</c>, as well as negative <c>int</c>, and edge cases (e.g. when the user closes the dialog, or does not enter anything at all.)</p>
+      <p>Write a function named <c>readposint</c> that uses the <c>input</c> dialog to prompt the user for a positive integer and then checks the input to confirm that it meets the requirements. It should be able to handle inputs that cannot be converted to <c>int</c>, as well as negative <c>int</c> and zero, and edge cases (e.g. when the user does not enter anything at all): whenever the input is not a positive integer, it should ask again. Once the user enters a positive integer, <c>readposint</c> returns it as an <c>int</c>.</p>
     </statement>
     <program xml:id="ex_exceptions_readposint_editor" interactive="activecode" language="python">
       <code>
@@ -12,7 +12,79 @@ def readposint():
     pass
 
 
-print(readposint())
+# This runs readposint when you press Run. The tests call readposint
+# themselves, with their own answers, so it does not run for them.
+if __name__ == "__main__":
+    print(readposint())
+
+====
+
+from unittest.gui import TestCaseGui
+import sys
+
+
+class myTests(TestCaseGui):
+
+    def answering(self, answers):
+        # Calls readposint() with input() replaced by a stand-in that gives
+        # these answers, one per call, and "999999" for any call after them.
+        # Returns what readposint() returned.
+        given = []
+
+        def fake_input(prompt=""):
+            if len(given) &lt; len(answers):
+                answer = answers[len(given)]
+            else:
+                answer = "999999"
+            given.append(answer)
+            return answer
+
+        # The stand-in goes into each module that holds this readposint, so
+        # its calls to input() find it before the built-in one.
+        holders = []
+        for name in list(sys.modules.keys()):
+            try:
+                if getattr(sys.modules[name], "readposint", None) is readposint:
+                    holders.append(sys.modules[name])
+            except Exception:
+                pass
+        saved = []
+        for module in holders:
+            saved.append((module, hasattr(module, "input"), getattr(module, "input", None)))
+            setattr(module, "input", fake_input)
+        try:
+            return readposint()
+        finally:
+            for module, had, old in saved:
+                if had:
+                    setattr(module, "input", old)
+                else:
+                    delattr(module, "input")
+
+    def check(self, answers, expected):
+        result = self.answering(answers)
+        shown = ", ".join(repr(a) for a in answers)
+        self.assertEqual(result, expected, "readposint() given the answers " + shown + " returns the int " + str(expected))
+        return result
+
+    def testPositiveAnswer(self):
+        result = self.check(["7"], 7)
+        self.assertTrue(type(result) == int, "readposint() returns the number as an int")
+
+    def testStopsAtFirstPositive(self):
+        self.check(["8", "100"], 8)
+
+    def testNotANumber(self):
+        self.check(["abc", "3.5", "12"], 12)
+
+    def testZeroAndNegative(self):
+        self.check(["-4", "0", "5"], 5)
+
+    def testEmptyAnswer(self):
+        self.check(["", "9"], 9)
+
+
+myTests().main()
       </code>
     </program>
   </exercise>
