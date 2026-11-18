@@ -89,8 +89,7 @@ Hello World
     <title>Installing Python on Windows</title>
     <p>If you are using windows you will need to install Python for yourself.  Here
                 is a video that explains how to do it.</p>
-    <raw format="html" xml:space="preserve">&lt;iframe width="425" height="349" src="http://www.youtube.com/embed/9EfGpN1Pnsg"
-        frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</raw>
+    <video xml:id="labs_install_python_windows_video" youtube="9EfGpN1Pnsg" width="auto"/>
     <p>We are assuming that you use Python 3.x, as of this writing the latest
                 version is Python 3.2.1.  This link will tell you how to update or install
                 Python on Linux, Mac, or Windows. <url href="http://www.diveintopython3.net/installing-python.html" visual="http://www.diveintopython3.net/installing-python.html">Install Python</url></p>
