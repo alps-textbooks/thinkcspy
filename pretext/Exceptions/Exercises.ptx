@@ -27,15 +27,18 @@ class myTests(TestCaseGui):
 
     def answering(self, answers):
         # Calls readposint() with input() replaced by a stand-in that gives
-        # these answers, one per call, and "999999" for any call after them.
+        # these answers, one per call, then "999999" for the next 20 calls,
+        # and after that stops a readposint() that is still asking.
         # Returns what readposint() returned.
         given = []
 
         def fake_input(prompt=""):
             if len(given) &lt; len(answers):
                 answer = answers[len(given)]
-            else:
+            elif len(given) &lt; len(answers) + 20:
                 answer = "999999"
+            else:
+                raise Exception("readposint() was given a positive integer and kept asking for input")
             given.append(answer)
             return answer
 
