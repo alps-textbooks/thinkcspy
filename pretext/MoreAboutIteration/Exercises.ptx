@@ -199,11 +199,12 @@ wn.exitonclick()
   <exercise label="ex_7_15">
     <statement>
       <p>Write a function to remove all the red from an image.</p>
-      <raw format="html" xml:space="preserve">&lt;img src="../_static/LutherBellPic.jpg" id="luther.jpg"&gt;
-&lt;h4 style="text-align: left;"&gt;For this and the following exercises, use the
-luther.jpg photo.&lt;/h4&gt;</raw>
+      <datafile label="luther-exercises" filename="luther.jpg">
+        <image source="datafiles/LutherBellPic.jpg" width="50%"/>
+      </datafile>
+      <p>For this and the following exercises, use the <c>luther.jpg</c> photo.</p>
     </statement>
-    <program interactive="activecode" language="python" xml:id="ex_7_15_editor">
+    <program interactive="activecode" language="python" xml:id="ex_7_15_editor" datafile="luther.jpg">
       <code>
 
         </code>
@@ -239,7 +240,7 @@ win.exitonclick()
     <statement>
       <p>Write a function to convert the image to grayscale.</p>
     </statement>
-    <program xml:id="ex_7_16_editor" interactive="activecode" language="python">
+    <program xml:id="ex_7_16_editor" interactive="activecode" language="python" datafile="luther.jpg">
       <code>
 
         </code>
@@ -249,7 +250,7 @@ win.exitonclick()
     <statement>
       <p>Write a function to convert an image to black and white.</p>
     </statement>
-    <program interactive="activecode" language="python" xml:id="ex_7_17_editor">
+    <program interactive="activecode" language="python" xml:id="ex_7_17_editor" datafile="luther.jpg">
       <code>
 
         </code>
@@ -311,7 +312,7 @@ newB = (R &#xD7; 0.272 + G &#xD7; 0.534 + B &#xD7; 0.131)</pre>
       <p>Write a function to convert an image to sepia tone. <em>Hint:</em>
                 Remember that rgb values must be integers between 0 and 255.</p>
     </statement>
-    <program xml:id="ex_7_18_editor" interactive="activecode" language="python">
+    <program xml:id="ex_7_18_editor" interactive="activecode" language="python" datafile="luther.jpg">
       <code>
 
         </code>
@@ -321,7 +322,7 @@ newB = (R &#xD7; 0.272 + G &#xD7; 0.534 + B &#xD7; 0.131)</pre>
     <statement>
       <p>Write a function to uniformly enlarge an image by a factor of 2 (double the size).</p>
     </statement>
-    <program interactive="activecode" language="python" xml:id="ex_7_19_editor">
+    <program interactive="activecode" language="python" xml:id="ex_7_19_editor" datafile="luther.jpg">
       <code>
 
         </code>
@@ -367,7 +368,7 @@ win.exitonclick()
                 parameter and smooths the image.  Your function should return a new image
                 that is the same as the old but smoothed.</p>
     </statement>
-    <program xml:id="ex_7_20_editor" interactive="activecode" language="python">
+    <program xml:id="ex_7_20_editor" interactive="activecode" language="python" datafile="luther.jpg">
       <code>
 
         </code>
@@ -379,7 +380,7 @@ win.exitonclick()
                         parameters.  The pixel mapping function should perform a manipulation on a single pixel and return
                         a new pixel.</p>
     </statement>
-    <program interactive="activecode" language="python" xml:id="ex_7_21_editor">
+    <program interactive="activecode" language="python" xml:id="ex_7_21_editor" datafile="luther.jpg">
       <code>
 
         </code>
@@ -426,7 +427,7 @@ win.exitonclick()
                 or the images may even be damaged.  One way of eliminating this noise is
                 to replace each pixel by the median value of the pixels surrounding it.</p>
     </statement>
-    <program xml:id="ex_7_22_editor" interactive="activecode" language="python">
+    <program xml:id="ex_7_22_editor" interactive="activecode" language="python" datafile="luther.jpg">
       <code>
 
         </code>
@@ -436,7 +437,7 @@ win.exitonclick()
     <statement>
       <p>Research the Sobel edge detection algorithm and implement it.</p>
     </statement>
-    <program interactive="activecode" language="python" xml:id="ex_7_23_editor">
+    <program interactive="activecode" language="python" xml:id="ex_7_23_editor" datafile="luther.jpg">
       <code>
 
         </code>

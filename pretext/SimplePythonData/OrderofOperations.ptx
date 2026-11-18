@@ -147,7 +147,7 @@ print((2 ** 3) ** 2)   # use parentheses to force the order you want!
       </choice>
     </choices>
   </exercise>
-  <p>Here are animations for the above expressions:</p>
-  <exercise runestone="se_tq281"/>
-  <exercise runestone="se_tq282"/>
+  <p>Here is each expression evaluated one step at a time:</p>
+  <p><ol marker="1"><li><p><c>16 - 2 * 5 // 3 + 1</c></p></li><li><p><c>16 - 10 // 3 + 1</c></p></li><li><p><c>16 - 3 + 1</c></p></li><li><p><c>13 + 1</c></p></li><li><p><c>14</c></p></li></ol></p>
+  <p><ol marker="1"><li><p><c>2 ** 2 ** 3 * 3</c></p></li><li><p><c>2 ** 8 * 3</c></p></li><li><p><c>256 * 3</c></p></li><li><p><c>768</c></p></li></ol></p>
 </section>

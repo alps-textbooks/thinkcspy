@@ -50,12 +50,18 @@ def reverse(astring):
     l.reverse()
     return ''.join(l)
 
+# Your program runs as its own module, main, so test_reverse looks reverse up
+# there; give main this one.
+import sys
+if 'main' in sys.modules:
+    sys.modules['main'].reverse = reverse
+
 
 class myTests(TestCaseGui):
 
     def testOne(self):
         test_reverse()
-        code = self.getEditorText().replace(' ','').replace('"', '').replace("'", '')
+        code = (self.getEditorText() + '\n').replace(' ','').replace('"', '').replace("'", '')
         self.assertTrue(testABC and '==cba' in code, "Assert tested 'abc'")
         self.assertTrue(testB and '==b' in code, "Assert tested 'b'")
         self.assertTrue(testEmpty and '==\n' in code, "Assert tested ''")

@@ -16,7 +16,8 @@
       </li>
     </ul>
   </p>
-  <p>We will try to retrieve the content of the HTML of this page as in the following code.</p>
+  <p>We will try to retrieve the HTML of the page at <c>https://example.com/</c>, a small page kept for use in
+            examples like this one, as in the following code.</p>
   <program xml:id="ch11_1" interactive="activecode" language="python">
     <code>
 import urllib.request
@@ -28,7 +29,7 @@ def retrieve_page(url):
     dta = my_socket.read()
     return dta
 
-the_text = retrieve_page("https://runestone.academy/runestone/books/published/thinkcspy/Files/FetchingSomethingFromTheWeb.html")
+the_text = retrieve_page("https://example.com/")
 print(the_text)
         </code>
   </program>
